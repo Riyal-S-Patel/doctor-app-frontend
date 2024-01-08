@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="container-fluid no-gutters shadow-lg px-0 py-0">
+
+        <div class="row pt-4 pb-4 bg-info bg-gradient mx-0">
+            <div class="row container text-center mb-4"><H3 class="fw-bold text-light">Doctor App</H3></div>
+            <div class="mb-2 p-1 bg-dark w-100"></div>
+
+            <div class="col-md-5 mx-auto mt-2">                
+                <div class="small fw-bold pb-1">Search doctor by name, email, speciality, location </div>
+                <div class="input-group">
+                    <input class="form-control border-end-0 border" type="search" [(ngModel)]="searchText" placeholder="Search" id="example-search-input">
+                    <span class="input-group-append">
+                        <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" (click)="searchDoctor()" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="mt-1 p-1 bg-dark w-100"></div> -->
+
+    <div class="container-fluid mt-4">
+        
+        <div  class="card" style="width: 18rem;">
+            @if (doctors) {
+                @for (doctor of doctors; track $index) {
+                    <img [src]="doctor.image" class="card-img-top" style="height: 330px;" alt="...">
+                    <!-- <img src="./../../assets/images/" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <h5 class="card-title">Name: {{doctor.name}}</h5>
+                    </div>
+                    <ul class="list-group list-group-flush"> @if (doctor.hospital) {
+                        <li class="list-group-item"> {{"Speciality:\t"+doctor!.speciality}}</li>
+                        <li class="list-group-item"> {{"Hospital:\t"+doctor.hospital!.name}}</li>
+                        <li class="list-group-item">{{"Location:\t"+doctor.hospital!.location}}</li>  
+                    }
+                    </ul>
+                    <!-- <div class="card-body">
+    
+                    </div> -->
+                }
+            }
+          </div>  
+    </div>
+</div>

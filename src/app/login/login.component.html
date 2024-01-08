@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row m-5 no-gutters shadow-lg">
+    <div class="col-md-6 d-none d-md-block">
+      <img src="./../../assets/images/doctor_appointment.jpg" class="img-fluid" style="min-height:100%;" />
+    </div>
+    <div class="col-md-6 bg-white p-5">
+      <h3 class="pb-3">Login</h3>
+      <div class="form-style">
+        @if (login) {
+          <form  [formGroup]="login" (ngSubmit)="onSubmit()">
+            <div class="form-group pb-3">
+              <input type="username" placeholder="Username" name="username" formControlName="username" class="form-control"  id="exampleInputEmail1"
+                aria-describedby="usernameHelp">
+            </div>
+            <div class="form-group pb-3">
+              <input type="password" placeholder="Password" name="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="d-flex align-items-center justify-content-end">
+              <!-- <div><a  routerLink="/first-component" routerLinkActive="active"ariaCurrentWhenActive="page">Forget Password?</a></div> -->
+              <a role="button" class="button" (click)="onClickURL('/forget-password')"> Forget Password? </a>
+            </div>
+            <div class="pb-2">
+              <button type="submit" class="btn btn-dark w-100 font-weight-bold mt-2">Submit</button>
+            </div>
+          </form>
+        }
+
+        <div class="pt-4 text-center">
+          Get Members Benefit. <a role="button" class="button" (click)="onClickURL('/register')">Sign Up</a>
+        </div>
+        <div class="pt-4 text-center">
+           <a role="button" class="button" (click)="onClickURL('/register?doctor')">Register as a doctor</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

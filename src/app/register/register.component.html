@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row m-5 no-gutters shadow-lg">
+    <div class="col-md-6 d-none d-md-block">
+      <img src="./../../assets/images/phone-video-call-to-doctor.jpg" class="img-fluid" style="min-height:100%;" />
+    </div>
+    <div class="col-md-6 bg-white p-5">
+      <h3 class="pb-3">Register</h3>
+      <div class="form-style">
+        <form [formGroup]="register" (ngSubmit)="submit()">
+          <div class="form-group pb-3">
+            <input type="text" placeholder="Username"  formControlName="username"  class="form-control" id="username"
+              aria-describedby="usernameHelp">
+          </div>
+          <div class="form-group pb-3">
+            <input type="text" placeholder="Full name" formControlName="name"  class="form-control" id="fullName"
+              aria-describedby="fullNameHelp">
+          </div>
+
+          <div class="form-group pb-3">
+            <input type="email" placeholder="Email" formControlName="email"  class="form-control" id="email" aria-describedby="emailHelp">
+          </div>
+
+          <div class="form-group pb-3">
+            <input type="text" placeholder="Contact number" formControlName="contactNumber"  class="form-control" id="contactNumber"
+              aria-describedby="contactNumberHelp">
+          </div>
+
+          <div class="form-group pb-3">
+            <input type="password" placeholder="Password" formControlName="password"  class="form-control" id="password">
+          </div>
+
+          <div class="form-group pb-3">
+            <input type="password" placeholder="Confirm Password" formControlName="confirmPassword"  class="form-control" id="confirmPassword">
+          </div>
+          
+          @if(isDoctor){
+            <!-- speciality -->
+            <div class="form-group pb-3">
+              <input type="text" placeholder="Speciality" formControlName="speciality"  class="form-control" id="speciality"
+                aria-describedby="specialityHelp">
+            </div>
+            <div class="form-group pb-3">
+              <input type="text" placeholder="Hospital Name" formControlName="hospitalName"  class="form-control" id="hospitalName"
+                aria-describedby="hospitalNameHelp">
+            </div>
+  
+            <div class="form-group pb-3">
+              <input type="text" placeholder="location" formControlName="location"  class="form-control" id="location"
+                aria-describedby="locationHelp">
+            </div>
+  
+            <div class="form-group pb-3">
+              <input type="text" placeholder="pincode" formControlName="pinCode"  class="form-control" id="pincode"
+                aria-describedby="pincodeHelp">
+            </div>
+          }
+
+
+
+
+          <div class="d-flex align-items-center justify-content-end">
+            <!-- <div><a  routerLink="/first-component" routerLinkActive="active"ariaCurrentWhenActive="page">Forget Password?</a></div> -->
+
+          </div>
+          <div class="pb-2">
+            <button type="submit" class="btn btn-dark w-100 font-weight-bold mt-2">Submit</button>
+          </div>
+        </form>
+        <div class="pt-4 text-center">
+          Already have account? <a role="button" class="button" (click)="onClickURL('/login')">Login</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
